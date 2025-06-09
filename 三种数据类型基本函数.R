@@ -1,0 +1,55 @@
+  -----------------------------------------+++基本函数
+--向量
+v6<-c(2,3,7,4,6,8,11,12)
+max(v6)   min(v6)
+sum(v6)
+prod(v6)#乘积
+cumax(v6)#累积最大值，每次取和时增加1个值
+mean(v6)
+sd(v6)
+median(v6)
+var(v6)
+rev(v6)#向量逆转
+sort(v6)#重排
+table(v6)#向量频数统计
+unique(v6)#去重
+#索引函数
+which(v6==7)
+which.max(v6)
+which.min(v6)
+#集合
+intersect(1:5,4:7)#交集
+setdiff(1:5,4:7)#差集
+union(1:5,4:7)#并集
+--数据框和矩阵
+----------------数据框
+df2<-data.frame(a=1:5,b=6:10,d=LETTERS[1:5])
+#行列合并
+rbind(df1,df2)
+cbind(df1,df2)
+#行列运算
+rowMeans(df2[1:4,1:2 ] )
+colSums(df2[ ,1:2])
+#apply(作用的对象,所作用的维度(行/列),使用的函数)
+apply(df2[1:5,1:2],2,sd)
+apply(df[ ,1:2],2,function(x){sum(is.na(x))}#自定义函数
+#对象结构
+summary(df1)#提供均值标准差等
+str(df2)
+head(df2,n=2)
+tail(df2,n=3)
+------------------矩阵
+m2<-matrix(
+  c(2,4,6,7,9,8),
+  ncol=2,
+  byrow=F
+)
+t(m2)#倒置
+------------------字符函数与分布相关函数
+paste(1:5,collapse="+")#连接参数，自变量之间用+连接，自变量与因变量之间~
+paste(letters[1:5],collapse="+")
+paste0(1:5,letters[1:5])#紧密连接
+toupper(month.name)#全部转大写
+tolower(month.name)#全部转小写
+grep("Fe",month.name)#含有某个字符的元素的索引
+gsub("a","000",month.name)#替换指定字符
